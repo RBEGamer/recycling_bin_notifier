@@ -32,7 +32,8 @@ If the API is started you can browse to `http://127.0.0.1:3015/static/index.html
 
 # USING DOCKER
 
-
+If you want to use docker, first you have to build the image.
+Run `bash /src/api/build_docker_image.sh` to build the API with the image name `recycling_calendar_api`.
 
 # BUILD THE NOTIFIER DEVICE
 
