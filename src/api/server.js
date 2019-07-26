@@ -10,6 +10,7 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var listEndpoints = require('express-list-endpoints');
+var uuidv1 = require('uuid/v1');
 var port = process.env.PORT || 3015;
 var server = app.listen(port);
 server.timeout = 1000 * 60 * 10; // 10 minutes
@@ -67,6 +68,7 @@ function parse_ical(_data){
                     res.local_date = ev.start.getDate() + "." + (ev.start.getMonth() + 1) + "." + (ev.start.getYear() - 100);
                     res.bin_type = BIN_KEYWORDS[bkindex];
                     res.timestamp = new Date(ev.start);
+                    res.uuid = uuidv1();
                     rr.push(res);
                 }
             }
