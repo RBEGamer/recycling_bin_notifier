@@ -26,6 +26,7 @@ int states[KEYWORD_LEN] = { 0, 0, 0, 0};
 int states_old[KEYWORD_LEN] = { 0, 0, 0, 0};
 const int output_pins[KEYWORD_LEN] = { D4, D5, D4, D5 }; //MODIFY
 const int TRIGGER_TIME = 700; //solanoid trigger time
+const int REQUEST_TIME_MINUTES = 60;
 
 
 // END CONFIG ---------------------------------
@@ -342,7 +343,7 @@ void loop(void)
     ArduinoOTA.handle();
 
     //MAKE A REQUEST ALLE STUNDEN
-    if (millis() - last > (1000*10/*60*60*8*/)) {
+    if (millis() - last > (1000*60*REQUEST_TIME_MINUTES)) {
         last = millis();
         HTTPClient http;
         http.begin("http://" + rbnurl + "/rest/get_color_events_of_the_day/1");
@@ -351,7 +352,7 @@ void loop(void)
 
         if (httpCode > 0) {
             String payload = http.getString();
-            last_error = payload;
+            last_error = "GET-REQUEST-RESPONSE: "+payload;
             Serial.println(payload);
             for (int i = 0; i < KEYWORD_LEN; i++) {
                if (strstr(payload.c_str(), keywords[i].c_str()) != NULL)
@@ -368,7 +369,6 @@ void loop(void)
                 if (states[i] != states_old[i]) {
                     states_old[i] = states[i];
                     Serial.println("set output" + String(output_pins[i]) + " to " + String(states[i]));
-
                     if (states[i]) {
                         digitalWrite(output_pins[i], HIGH); //ONLY TRIGGER A SHORT AMOUNT OF TIME
                         delay(TRIGGER_TIME);
