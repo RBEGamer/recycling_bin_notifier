@@ -73,3 +73,4 @@ Flash the Ardino Sketch (/src/esp8266_sketch/rbn/rbn.ino) to the ESP8266. After 
 * setup the port to which the mosfets are connected `line 27 int output_pins`
 * setup the keyword `color_desc` to which your device react to `line 24 String keywords`
 
+<img src="/documentation/esp8266.png" />
