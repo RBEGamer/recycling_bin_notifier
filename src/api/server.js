@@ -18,7 +18,7 @@ app.use('/static', express.static(__dirname + '/public'));
 app.use(require('sanitize').middleware);
 
 var cal_path = currentPath + '/data_volume/calendar.ics';
-
+console.log(cal_path);
 var data = ical.parseFile(cal_path);
 
 
@@ -53,6 +53,7 @@ var date_sort_desc = function (date1, date2) {
 var results = [];
 
 function parse_ical(_data){
+    console.log(_data);
     var rr = [];
     for (let k in _data) {
     if (_data.hasOwnProperty(k)) {
@@ -80,7 +81,8 @@ function parse_ical(_data){
     return rr;
 }
 
-results= parse_ical();
+results= parse_ical(data);
+
 for (let index = 0; index < results.length; index++) {
     const element = results[index];
     console.log(element);
@@ -255,7 +257,7 @@ app.get('/rest/get_events_of_the_day/:color/:simplified', (req, res) => {
 
 //RETURNS A JSON WITH ONLY /rest ENPOINTS TO GENERATE A NICE HTML SITE
 var REST_ENDPOINT_PATH_BEGIN_REGEX = "^\/rest\/(.)*$"; //REGEX FOR ALL /rest/* beginning
-var REST_API_TITLE = "recycling calendar api";
+var REST_API_TITLE = "RecyclingBinNotifier";
 var rest_endpoint_regex = new RegExp(REST_ENDPOINT_PATH_BEGIN_REGEX);
 var REST_PARAM_REGEX = "\/:(.*)\/"; // FINDS /:id/ /:hallo/test
 //HERE YOU CAN ADD ADDITIONAL CALL DESCTIPRION
