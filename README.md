@@ -27,6 +27,8 @@ If the API is started you can browse to `http://127.0.0.1:3015/static/index.html
 
 * `/rest/get_color_events_of_the_day` A simplified Version of `/rest/get_events_of_the_day` for easy parsing with an microcontroller
 
+* `/rest/calendar_need_update` - Returns `1` if only three events in the calendar left. So. a reminder to update to a new one
+
 
 # USING DOCKER
 
