@@ -11,7 +11,7 @@ Go to the Aachens ServiceCenter Website (https://serviceportal.aachen.de/abfalln
 
 Click on the button `DOWNLOAD ICAL` to download the calendar file.
 
-Rename the calendar to `calendar.ics` and place it in the root directory (`/src/api/calendar.ics`) of the script, where the `server.js` file is located.
+Rename the calendar to `calendar.ics` and place it in the root directory (`/src/api/data_volume/calendar.ics`) of the script, where the `server.js` file is located.
 
 # RUN THE API
 If you have NodeJS installed, you can simply run `node /src/api/server.js` or you can use docker (see below).
