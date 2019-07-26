@@ -37,6 +37,8 @@ If the API is started you can browse to `http://127.0.0.1:3015/static/index.html
 If you want to use docker, first you have to build the image.
 Run `bash /src/api/build_docker_image.sh` to build the API with the image name `recycling_calendar_api`.
 
+To run the docker image simply type:
+`docker run -d -p 3015:3015 recycling_calendar_api`
 # BUILD THE NOTIFIER DEVICE
 
 Ok now you have an API, but i tink a device to show which bin will be the next would be nice.
