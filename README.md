@@ -50,4 +50,7 @@ To modify the list avariable bin types like Paper,Organic, Residual Waste you ca
 Ok now you have an API, but i tink a device to show which bin will be the next would be nice.
 So by using a ESP8266 and some mechanical parts, it notifies you at the day of an event.
 
+The esp8266 uses the. `/rest/get_color_events_of_the_day` API. The API returns a array of all bin colors they will be taken.
+
+
 ## PARTS
