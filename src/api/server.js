@@ -208,12 +208,13 @@ app.get('/rest/get_events_of_the_day', (req, res) => {
 });
 
 app.get('/rest/get_color_events_of_the_day/:simplified', (req, res) => {
-    //console.log(req);
+  //  console.log(req);
     var sf = req.params.simplified;
     var date_begin = new Date();
     date_begin.setHours(0);
     date_begin.setMinutes(0);
     date_begin.setSeconds(0);
+   // date_begin.setDate(26);
     var tmp = [];
     for (let index = 0; index < results.length; index++) {
         var dt = new Date(results[index].timestamp);
@@ -222,7 +223,7 @@ app.get('/rest/get_color_events_of_the_day/:simplified', (req, res) => {
         }
     }
     if (String(sf) == "1") {
-        res.set('Content-Type', 'text/plain');
+        res.set('Content-Type', 'text/html');
         var tmpstr = "";
         for (let index = 0; index < tmp.length; index++) {
             tmpstr += tmp[index] + ",";
@@ -238,7 +239,7 @@ app.get('/rest/get_color_events_of_the_day/:simplified', (req, res) => {
 app.get('/rest/get_events_of_the_day/:color/:simplified', (req, res) => {
     var color = req.params.color;
     var sf = req.params.simplified; //0 1
-    //alle events die nur an diesem tag sind
+    //alle events die nur an diesem tag sin
     var date_begin = new Date();
     date_begin.setHours(0);
     date_begin.setMinutes(0);
@@ -251,7 +252,7 @@ app.get('/rest/get_events_of_the_day/:color/:simplified', (req, res) => {
         }
     }
     if(String(sf) == "1"){
-        res.set('Content-Type', 'text/plain');
+        res.set('Content-Type', 'text/html');
         if (tmp.length > 0){
             res.send("1");
         }else{
