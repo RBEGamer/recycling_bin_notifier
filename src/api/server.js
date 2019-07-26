@@ -207,7 +207,9 @@ app.get('/rest/get_events_of_the_day', (req, res) => {
     res.json(tmp);
 });
 
-app.get('/rest/get_color_events_of_the_day', (req, res) => {
+app.get('/rest/get_color_events_of_the_day/:simplified', (req, res) => {
+    //console.log(req);
+    var sf = req.params.simplified;
     var date_begin = new Date();
     date_begin.setHours(0);
     date_begin.setMinutes(0);
@@ -219,7 +221,18 @@ app.get('/rest/get_color_events_of_the_day', (req, res) => {
             tmp.push(results[index].bin_type.color_desc);
         }
     }
-    res.json(tmp);
+    if (String(sf) == "1") {
+        res.set('Content-Type', 'text/plain');
+        var tmpstr = "";
+        for (let index = 0; index < tmp.length; index++) {
+            tmpstr += tmp[index] + ",";
+            
+        }
+        res.send(tmpstr.slice(0,-1));
+    }else{
+        res.json(tmp);
+    }
+    
 });
 
 app.get('/rest/get_events_of_the_day/:color/:simplified', (req, res) => {
