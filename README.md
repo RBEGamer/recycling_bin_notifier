@@ -1,8 +1,6 @@
 <img src="/documentation/logo.png" />
 A calendar parser to parse the waste bin calendar of aachen and provides a simple to use api
 
-# FEATURES
-
 
 
 
@@ -41,6 +39,12 @@ To run the docker image simply `cd` into the `/src/api` directotry and run:
 `docker run -itd --name recycling_calendar_api -v $(pwd)/data_volume:/usr/src/app/data_volume recycling_calendar_api`
 
 The image a the `data_volume`-Volume so you can easy access the `calendar.ics` file. After replacing the File you can use the API or restart the container to parse the calendar file again.
+
+
+# CALENDAR STRUCTURE
+To modify the list avariable bin types like Paper,Organic, Residual Waste you can edit the array in `line 28` of the `server.js`. The im portant value is `BIN_KEYWORDS`. A calendar event description will be searched for the word in `BIN_KEYWORDS`. You can specify a color for the type of waste in `color_desc` this value will be returned from the api call `/rest/get_color_events_of_the_day`. Or you can add own json keys for your needs.
+
+
 # BUILD THE NOTIFIER DEVICE
 
 Ok now you have an API, but i tink a device to show which bin will be the next would be nice.
