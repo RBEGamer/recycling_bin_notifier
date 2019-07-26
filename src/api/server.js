@@ -17,9 +17,9 @@ server.timeout = 1000 * 60 * 10; // 10 minutes
 app.use('/static', express.static(__dirname + '/public'));
 app.use(require('sanitize').middleware);
 
+var cal_path = currentPath + '/data_volume/calendar.ics';
 
-
-var data = ical.parseFile(currentPath + '/calendar.ics');
+var data = ical.parseFile(cal_path);
 
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -116,9 +116,10 @@ app.get('/rest/parse_url_calendar/:url', function (req, res) {
 app.get('/rest/parse_file_calendar_relative/:file', function (req, res) {
     var file = req.params.file;
     var pa = currentPath + "/" + file;
+    cal_path = pa;
     data = ical.parseFile(pa);
     results = parse_ical(data);
-    res.json({ parsed_data: results, path: pa});
+    res.json({ parsed_data: results, path: pa, app_directory: currentPath});
 });
 
 app.get('/rest/parse_last_set_calendar', function (req, res) {
