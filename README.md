@@ -63,4 +63,13 @@ In my example im building the device for four bin types : black,blue,yellow,gree
 ## PARTS
 * ESP8266
 * 4x 6V Solanoid
-* pcf i2c port expander
+* 4x MOSFETS
+
+
+
+# SOFTWARE SETUP
+Flash the Ardino Sketch (/src/esp8266_sketch/rbn/rbn.ino) to the ESP8266. After startup you will find a wifi called `Recycling Notifier Device`. Setup your local wifi and reset the ESP8266. Back in your homenetwork visit the ip of your esp8266 with your browser and setup the IP of this REST interface.
+
+* setup the port to which the mosfets are connected `line 27 int output_pins`
+* setup the keyword `color_desc` to which your device react to `line 24 String keywords`
+
