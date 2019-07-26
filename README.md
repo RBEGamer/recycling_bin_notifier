@@ -52,5 +52,9 @@ So by using a ESP8266 and some mechanical parts, it notifies you at the day of a
 
 The esp8266 uses the. `/rest/get_color_events_of_the_day` API. The API returns a array of all bin colors they will be taken.
 
+In my example im building the device for four bin types : black,blue,yellow,green.
 
 ## PARTS
+* ESP8266
+* 4x 6V Solanoid
+* pcf i2c port expander
