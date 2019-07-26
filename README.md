@@ -30,9 +30,12 @@ If the API is started you can browse to `http://127.0.0.1:3015/static/index.html
 * `/rest/calendar_need_update` - Returns `1` if only three events in the calendar left. So. a reminder to update to a new one
 
 
+<img src="/documentation/apiexplorer.png" />
+
 # USING DOCKER
 
-
+If you want to use docker, first you have to build the image.
+Run `bash /src/api/build_docker_image.sh` to build the API with the image name `recycling_calendar_api`.
 
 # BUILD THE NOTIFIER DEVICE
 
