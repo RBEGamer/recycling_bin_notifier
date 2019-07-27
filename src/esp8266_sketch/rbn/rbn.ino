@@ -24,7 +24,7 @@ const int KEYWORD_LEN = 4;
 const String keywords[KEYWORD_LEN] = { "green", "black", "blue", "yellow"}; //MODIFY
 int states[KEYWORD_LEN] = { 0, 0, 0, 0};
 int states_old[KEYWORD_LEN] = { 0, 0, 0, 0};
-const int output_pins[KEYWORD_LEN] = { D4, D5, D4, D5 }; //MODIFY
+const int output_pins[KEYWORD_LEN] = { D1, D2, D6, D7 }; //MODIFY
 const int TRIGGER_TIME = 700; //solanoid trigger time
 const int REQUEST_TIME_MINUTES = 60;
 

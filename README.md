@@ -11,7 +11,7 @@ Go to the Aachens ServiceCenter Website (https://serviceportal.aachen.de/abfalln
 
 Click on the button `DOWNLOAD ICAL` to download the calendar file.
 
-Rename the calendar to `calendar.ics` and place it in the root directory (`/src/api/calendar.ics`) of the script, where the `server.js` file is located.
+Rename the calendar to `calendar.ics` and place it in the root directory (`/src/api/data_volume/calendar.ics`) of the script, where the `server.js` file is located.
 
 # RUN THE API
 If you have NodeJS installed, you can simply run `node /src/api/server.js` or you can use docker (see below).
@@ -67,9 +67,21 @@ In my example im building the device for four bin types : black,blue,yellow,gree
 
 
 
-# SOFTWARE SETUP
+## SOFTWARE SETUP
 Flash the Ardino Sketch (/src/esp8266_sketch/rbn/rbn.ino) to the ESP8266. After startup you will find a wifi called `Recycling Notifier Device`. Setup your local wifi and reset the ESP8266. Back in your homenetwork visit the ip of your esp8266 with your browser and setup the IP of this REST interface.
+
+<img src="/documentation/esp8266.png" />
 
 * setup the port to which the mosfets are connected `line 27 int output_pins`
 * setup the keyword `color_desc` to which your device react to `line 24 String keywords`
+
+
+### USBALE OUTPUT PINS
+The ESP8266-12E has the following outputs you can use:
+* D1 = GPIO5
+* D2 = GPIO4
+* D6 = GPIO12
+* D7 = GPIO13
+* D3 = GPIO0
+
 
