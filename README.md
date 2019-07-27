@@ -42,7 +42,7 @@ If you want to use docker, first you have to build the image.
 Run `bash /src/api/build_docker_image.sh` to build the API with the image name `recycling_calendar_api`.
 
 To run the docker image simply `cd` into the `/src/api` directotry and run:
-`docker run -itd --name recycling_calendar_api -v $(pwd)/data_volume:/usr/src/app/data_volume recycling_calendar_api`
+`docker run -itd -p 3015:3015 --name recycling_calendar_api -v $(pwd)/data_volume:/usr/src/app/data_volume recycling_calendar_api`
 
 The image a the `data_volume`-Volume so you can easy access the `calendar.ics` file. After replacing the File you can use the API or restart the container to parse the calendar file again.
 
