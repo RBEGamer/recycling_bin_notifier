@@ -85,3 +85,6 @@ The ESP8266-12E has the following outputs you can use:
 * D3 = GPIO0
 
 
+## 3D Printing
+# todo
+<img src="/documentation/3dpart1.png" />
