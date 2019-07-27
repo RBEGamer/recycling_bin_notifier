@@ -87,4 +87,4 @@ The ESP8266-12E has the following outputs you can use:
 
 ## 3D Printing
 # todo
-<img src="/documentation/3dpart1.png" />
+<img src="/documentation/3dpart1.PNG" />
