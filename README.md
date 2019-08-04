@@ -1,4 +1,5 @@
-<img src="/documentation/logo.png" />
+
+![Gopher image](/documentation/logo.png)
 A calendar parser to parse the waste bin calendar of aachen and provides a simple to use api
 
 
