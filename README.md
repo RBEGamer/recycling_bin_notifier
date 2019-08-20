@@ -18,7 +18,7 @@ Rename the calendar to `calendar.ics` and place it in the root directory (`/src/
 If you have NodeJS installed, you can simply run `node /src/api/server.js` or you can use docker (see below).
 If the API is started you can browse to `http://127.0.0.1:3015/static/index.html` to explore the API.
 
-* `	/rest/all_events` - Show all events that are found in the parsed calendar
+* `	/rest/all_events` - Show all found events
 * `/rest/get_next_events`- Shows all next events
 * `/rest/get_events_of_the_day` - Lists all events for the day
 
