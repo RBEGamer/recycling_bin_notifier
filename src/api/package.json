@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-list-endpoints": "^4.0.1",
     "ical": "^0.6.0",
     "sanitize": "^2.1.0",
